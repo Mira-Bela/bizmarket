@@ -6,7 +6,7 @@ import Popup from "./pop-up.jsx";
 import { Context } from "./Context/context";
 
 const HeaderMenu = () => {
-  const PopUp = useContext(Context);
+  const popUp = useContext(Context);
   return (
     <div className="container">
       <div className={styles.wrapper}>
@@ -22,7 +22,7 @@ const HeaderMenu = () => {
             </li>
           </ul>
           <Button label="Login" />
-          {PopUp.isOpen && <PopUp HandleClose={toggleClose} />}
+          {popUp.isOpen && <Popup HandleClose={popUp.toggleClose} />}
         </div>
       </div>
     </div>
