@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import styles from "./Header.module.scss";
+import Popup from "./pop-up.jsx";
+import { Context } from "./Context/context";
 
 const HeaderMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const togglePopUp = () => {
-    setIsOpen(!isOpen);
-  };
+  const PopUp = useContext(Context);
   return (
     <div className="container">
       <div className={styles.wrapper}>
@@ -22,7 +21,8 @@ const HeaderMenu = () => {
               </Link>
             </li>
           </ul>
-          <Button  onClick={togglePopUp} label="Login" />
+          <Button label="Login" />
+          {PopUp.isOpen && <PopUp HandleClose={toggleClose} />}
         </div>
       </div>
     </div>
