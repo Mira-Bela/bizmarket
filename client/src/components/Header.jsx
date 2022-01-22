@@ -65,6 +65,11 @@ const HeaderMenu = () => {
                     </div>
                     <button className="login-btn">Login</button>
                   </form>
+                  {/* Add New to BizzmMark sign up  */}
+                  <a className="popup-footer" href={"url"}>
+                    {" "}
+                    New to BizMarket?&nbsp;<span>Sign Up</span>
+                  </a>
                 </>
               }
             />
